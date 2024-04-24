@@ -17,5 +17,8 @@ public:
 
 private:
     Ui::MainWindow *ui;
+
+private slots:
+    void viewHtml();
 };
 #endif // MAINWINDOW_H

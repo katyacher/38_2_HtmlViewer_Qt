@@ -6,6 +6,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    connect(ui->plainTextEdit, SIGNAL(textChanged()), this, SLOT(viewHtml()));
 }
 
 MainWindow::~MainWindow()
@@ -13,3 +14,6 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::viewHtml(){
+     ui->webEngineView->setHtml(ui->plainTextEdit->toPlainText());
+}
